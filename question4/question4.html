@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nguyen Tri Dung - Frontend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Winky+Sans&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --border-color: #dee2e6;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --border-color: #444;
+    }
+
+    body {
+      font-family: 'Winky Sans', Arial, sans-serif; /* Đổi font sang Winky Sans */
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .card, .list-group-item, .form-control {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      border-color: var(--border-color);
+    }
+
+    .navbar, footer {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .hero {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Nguyen Tri Dung</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero py-5 text-center">
+
+    <div class="container">
+      <h1 class="display-4">Frontend Developer</h1>
+      <p class="lead">A responsive resume made with Bootstrap</p>
+      <button class="btn btn-outline-secondary" onclick="toggleTheme()">Toggle Dark Mode</button>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container my-5">
+    <div class="row">
+      <!-- Projects -->
+      <div class="col-md-4 mb-3" id="projects">
+        <h3>Projects</h3>
+        <ul class="list-group">
+          <li class="list-group-item">HTML Only Portfolio</li>
+          <li class="list-group-item">Calculator</li>
+          <li class="list-group-item">Quiz App</li>
+          <li class="list-group-item">Countdown Timer</li>
+          <li class="list-group-item">Product Upcoming Page</li>
+        </ul>
+      </div>
+      <!-- Work & Open Source -->
+      <div class="col-md-4 mb-3">
+        <h3>Work Experience</h3>
+        <p><strong>roadmap.sh</strong><br>Solved all frontend projects</p>
+        <a href="#" class="btn btn-primary">Visit my Profile</a>
+
+        <h3 class="mt-4">Open Source</h3>
+        <p>Contributed to 50 open-source projects with 200+ GitHub Stars.</p>
+        <a href="#" class="btn btn-dark">Visit GitHub</a>
+      </div>
+      <!-- Education -->
+      <div class="col-md-4 mb-3" id="education">
+        <h3>Education</h3>
+        <p>Graduated with CGPA 3.76. Organized 30 sessions. Hackathon Winner.</p>
+        <ul class="list-group">
+          <li class="list-group-item">OOP</li>
+          <li class="list-group-item">DSA</li>
+          <li class="list-group-item">Web Engineering</li>
+          <li class="list-group-item">AI, HCI, DBMS, DDB, Discrete Math</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reviews -->
+  <section class="container my-5">
+    <h3 class="text-center">Reviews from My Teachers</h3>
+    <div class="row justify-content-center">
+      <div class="col-md-3">
+        <div class="card p-3 border-dark">
+          <p>Nguyen Tri Dung was a brilliant student; always stood out with his assignments.</p>
+          <p class="text-muted">Jane Doe - Assistant Professor</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card p-3 border-dark">
+          <p>Nguyen Tri Dung showed exceptional skills in frontend development and teamwork.</p>
+          <p class="text-muted">John Smith - Lecturer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="container my-5" id="contact">
+    <h3>Contact Me</h3>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 border-top">
+    <p>© All rights reserved 2025</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
